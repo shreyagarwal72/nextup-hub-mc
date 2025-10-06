@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
 import heroBackground from "@/assets/gaming-hero.jpg";
@@ -56,40 +57,68 @@ const Index = () => {
       {/* Main Content */}
       <main className="relative z-10 container mx-auto px-4 pt-32 pb-20">
         {/* Hero Section */}
-        <section className="text-center mb-16 animate-fade-in">
+        <header className="text-center mb-16 animate-fade-in">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent drop-shadow-2xl leading-tight">
-            Welcome to Nextup Studio!
+            Minecraft Hub
           </h1>
-          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed mb-4">
-            Your hub for Minecraft worlds, Techno Gamerz World downloads, feature-rich Bedrock addons, and stunning shaders.
+          <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
+            Choose your edition and start your adventure
           </p>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Designed for players seeking adventure, survival, and epic new visuals.
-          </p>
+        </header>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 animate-scale-in" style={{ animationDelay: '0.2s' }}>
-            <Button 
-              onClick={handleBedrockClick}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/50 active:scale-95 min-w-[200px]"
-            >
-              Explore My World
-            </Button>
-            <Button 
-              onClick={handleJavaClick}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/50 active:scale-95 min-w-[200px]"
-            >
-              Discover Addons
-            </Button>
-          </div>
+        {/* Edition Cards */}
+        <section className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16" aria-label="Minecraft Editions">
+          {/* Bedrock Edition Card */}
+          <article className="group animate-scale-in">
+            <Card className="bg-card/40 backdrop-blur-md border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 h-full">
+              <CardHeader className="text-center pb-4 pt-8">
+                <CardTitle className="text-3xl md:text-4xl font-bold text-primary mb-3 transition-all duration-300 group-hover:scale-105">
+                  Bedrock Edition
+                </CardTitle>
+                <CardDescription className="text-base md:text-lg text-foreground/70 leading-relaxed px-4">
+                  Play the cross-platform Minecraft experience with friends across devices.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex justify-center pt-2 pb-8">
+                <Button 
+                  onClick={handleBedrockClick}
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-6 text-lg rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 active:scale-95"
+                  aria-label="Enter Bedrock Edition"
+                >
+                  Enter
+                </Button>
+              </CardContent>
+            </Card>
+          </article>
+
+          {/* Java Edition Card */}
+          <article className="group animate-scale-in" style={{ animationDelay: '0.1s' }}>
+            <Card className="bg-card/40 backdrop-blur-md border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 h-full">
+              <CardHeader className="text-center pb-4 pt-8">
+                <CardTitle className="text-3xl md:text-4xl font-bold text-primary mb-3 transition-all duration-300 group-hover:scale-105">
+                  Java Edition
+                </CardTitle>
+                <CardDescription className="text-base md:text-lg text-foreground/70 leading-relaxed px-4">
+                  Enjoy the classic PC Minecraft experience with mods and servers.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex justify-center pt-2 pb-8">
+                <Button 
+                  onClick={handleJavaClick}
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-6 text-lg rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 active:scale-95"
+                  aria-label="Enter Java Edition"
+                >
+                  Enter
+                </Button>
+              </CardContent>
+            </Card>
+          </article>
         </section>
 
-        {/* Scroll Indicator */}
-        <div className="flex justify-center mt-20 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <div className="w-8 h-12 rounded-full border-2 border-primary/50 flex items-start justify-center p-2">
-            <div className="w-1.5 h-3 bg-primary rounded-full animate-bounce" />
-          </div>
-        </div>
+        {/* Footer */}
+        <footer className="text-center text-muted-foreground text-sm animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <p>© 2025 Nextup Studio · All Rights Reserved</p>
+        </footer>
       </main>
     </div>
   );
