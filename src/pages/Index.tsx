@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
 import heroBackground from "@/assets/gaming-hero.jpg";
 
@@ -26,9 +25,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      {/* Navigation */}
-      <Navbar />
-
       {/* Hero Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -55,7 +51,7 @@ const Index = () => {
       <div className="absolute top-1/3 right-1/4 w-24 h-24 rounded-full bg-primary/25 blur-3xl floating-orb" style={{ animationDelay: '5s' }} />
       
       {/* Main Content */}
-      <main className="relative z-10 container mx-auto px-4 pt-32 pb-20">
+      <main className="relative z-10 container mx-auto px-4 py-20">
         {/* Hero Section */}
         <header className="text-center mb-16 animate-fade-in">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent drop-shadow-2xl leading-tight">
