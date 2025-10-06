@@ -1,73 +1,88 @@
-# Welcome to your Lovable project
+# Minecraft Hub - Nextup Studio
 
-## Project info
+A beautiful, animated landing page for Minecraft players to choose between Bedrock Edition and Java Edition.
 
-**URL**: https://lovable.dev/projects/14aa2386-b2db-4b47-9f9e-12da8fa71785
+## 🎮 Features
 
-## How can I edit this code?
+- **Dual Edition Support**: Choose between Bedrock Edition (cross-platform) or Java Edition (classic PC)
+- **Stunning Animations**: Floating orbs, gradient effects, and smooth hover transitions
+- **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
+- **SEO Optimized**: Complete meta tags, semantic HTML, and accessibility features
+- **Production Ready**: Built with modern best practices and performance in mind
 
-There are several ways of editing your application.
+## 🚀 Live Demo
 
-**Use Lovable**
+Visit the live site: [Your Domain Here]
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/14aa2386-b2db-4b47-9f9e-12da8fa71785) and start prompting.
+## 🛠️ Technologies Used
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling and animations
+- **Vite** - Build tool
+- **shadcn/ui** - UI components
 
-**Use your preferred IDE**
+## 📦 Installation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to project directory
+cd nextup-hub-creations
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🎨 Design Features
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Dark theme with teal/cyan accents
+- Animated floating orbs with glow effects
+- Mouse-tracking gradient overlay
+- Smooth scale and shadow animations on hover
+- Backdrop blur glass-morphism cards
+- Responsive typography and spacing
 
-**Use GitHub Codespaces**
+## 🔧 Configuration
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The project uses a custom design system defined in `src/index.css` with HSL color variables for easy theming.
 
-## What technologies are used for this project?
+### Color Palette
+- **Primary**: `hsl(174 72% 56%)` - Teal/Cyan
+- **Background**: `hsl(200 20% 10%)` - Dark blue-gray
+- **Card**: `hsl(200 25% 12%)` - Slightly lighter dark
 
-This project is built with:
+## 📱 SEO Features
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Complete meta tags (title, description, keywords)
+- Open Graph tags for social sharing
+- Twitter Card support
+- Semantic HTML5 structure
+- Proper heading hierarchy
+- Alt text for images
+- ARIA labels for accessibility
+- Canonical URLs
 
-## How can I deploy this project?
+## 🚀 Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/14aa2386-b2db-4b47-9f9e-12da8fa71785) and click on Share -> Publish.
+Deploy easily with [Lovable](https://lovable.dev):
 
-## Can I connect a custom domain to my Lovable project?
+1. Open your Lovable project
+2. Click Share → Publish
+3. Your site is live!
 
-Yes, you can!
+## 📄 License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+© 2025 Nextup Studio · All Rights Reserved
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 🤝 Contributing
+
+This is a Nextup Studio project. For any inquiries or contributions, please contact the team.
+
+## 📞 Support
+
+For support and questions, visit [Lovable Documentation](https://docs.lovable.dev)
