@@ -55,31 +55,38 @@ const Index = () => {
         {/* Hero Section */}
         <header className="text-center mb-16 animate-fade-in">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent drop-shadow-2xl leading-tight">
-            Minecraft Hub
+            Minecraft Hub - Official Nextup Studio
           </h1>
-          <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
-            Choose your edition and start your adventure
+          <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed mb-3">
+            Choose Your Minecraft Edition: Bedrock or Java
+          </p>
+          <p className="text-base text-muted-foreground max-w-3xl mx-auto">
+            Free Minecraft downloads, custom worlds, Bedrock addons, Java mods, and stunning shaders. Your ultimate hub for Minecraft Bedrock Edition and Java Edition gaming.
           </p>
         </header>
 
         {/* Edition Cards */}
-        <section className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16" aria-label="Minecraft Editions">
+        <section className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16" aria-label="Choose Minecraft Edition - Bedrock or Java">
           {/* Bedrock Edition Card */}
-          <article className="group animate-scale-in">
+          <article className="group animate-scale-in" itemScope itemType="https://schema.org/SoftwareApplication">
+            <meta itemProp="name" content="Minecraft Bedrock Edition" />
+            <meta itemProp="applicationCategory" content="Game" />
+            <meta itemProp="operatingSystem" content="Windows, Android, iOS, Xbox, PlayStation, Nintendo Switch" />
             <Card className="bg-card/40 backdrop-blur-md border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 h-full">
               <CardHeader className="text-center pb-4 pt-8">
-                <CardTitle className="text-3xl md:text-4xl font-bold text-primary mb-3 transition-all duration-300 group-hover:scale-105">
-                  Bedrock Edition
+                <CardTitle className="text-3xl md:text-4xl font-bold text-primary mb-3 transition-all duration-300 group-hover:scale-105" itemProp="name">
+                  Minecraft Bedrock Edition
                 </CardTitle>
-                <CardDescription className="text-base md:text-lg text-foreground/70 leading-relaxed px-4">
-                  Play the cross-platform Minecraft experience with friends across devices.
+                <CardDescription className="text-base md:text-lg text-foreground/70 leading-relaxed px-4" itemProp="description">
+                  Play cross-platform Minecraft Bedrock Edition with friends on Android, iOS, Windows, Xbox, PlayStation, and Nintendo Switch. Free download, worlds, and addons.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex justify-center pt-2 pb-8">
                 <Button 
                   onClick={handleBedrockClick}
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-6 text-lg rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 active:scale-95"
-                  aria-label="Enter Bedrock Edition"
+                  aria-label="Download and play Minecraft Bedrock Edition - Cross-platform gaming"
+                  title="Access Minecraft Bedrock Edition worlds, addons, and downloads"
                 >
                   Enter
                 </Button>
@@ -88,21 +95,25 @@ const Index = () => {
           </article>
 
           {/* Java Edition Card */}
-          <article className="group animate-scale-in" style={{ animationDelay: '0.1s' }}>
+          <article className="group animate-scale-in" style={{ animationDelay: '0.1s' }} itemScope itemType="https://schema.org/SoftwareApplication">
+            <meta itemProp="name" content="Minecraft Java Edition" />
+            <meta itemProp="applicationCategory" content="Game" />
+            <meta itemProp="operatingSystem" content="Windows, macOS, Linux" />
             <Card className="bg-card/40 backdrop-blur-md border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 h-full">
               <CardHeader className="text-center pb-4 pt-8">
-                <CardTitle className="text-3xl md:text-4xl font-bold text-primary mb-3 transition-all duration-300 group-hover:scale-105">
-                  Java Edition
+                <CardTitle className="text-3xl md:text-4xl font-bold text-primary mb-3 transition-all duration-300 group-hover:scale-105" itemProp="name">
+                  Minecraft Java Edition
                 </CardTitle>
-                <CardDescription className="text-base md:text-lg text-foreground/70 leading-relaxed px-4">
-                  Enjoy the classic PC Minecraft experience with mods and servers.
+                <CardDescription className="text-base md:text-lg text-foreground/70 leading-relaxed px-4" itemProp="description">
+                  Experience classic Minecraft Java Edition for PC with unlimited mods, custom servers, and community content. Free resources and downloads for Windows, Mac, and Linux.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex justify-center pt-2 pb-8">
                 <Button 
                   onClick={handleJavaClick}
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-6 text-lg rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 active:scale-95"
-                  aria-label="Enter Java Edition"
+                  aria-label="Download and play Minecraft Java Edition - PC gaming with mods"
+                  title="Access Minecraft Java Edition mods, servers, and custom content"
                 >
                   Enter
                 </Button>
@@ -112,8 +123,9 @@ const Index = () => {
         </section>
 
         {/* Footer */}
-        <footer className="text-center text-muted-foreground text-sm animate-fade-in" style={{ animationDelay: '0.3s' }}>
-          <p>© 2025 Nextup Studio · All Rights Reserved</p>
+        <footer className="text-center text-muted-foreground text-sm animate-fade-in" style={{ animationDelay: '0.3s' }} role="contentinfo">
+          <p>© 2025 Nextup Studio · All Rights Reserved · Minecraft Hub - Bedrock & Java Edition Downloads</p>
+          <p className="mt-2 text-xs">Official source for Minecraft worlds, addons, mods, shaders, and free downloads</p>
         </footer>
       </main>
     </div>
