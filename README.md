@@ -12,7 +12,7 @@ A beautiful, animated landing page for Minecraft players to choose between Bedro
 
 ## 🚀 Live Demo
 
-Visit the live site: [Your Domain Here]
+Visit the live site: [https://nextup-hub-mc.vercel.app/]
 
 ## 🛠️ Technologies Used
 
@@ -26,7 +26,7 @@ Visit the live site: [Your Domain Here]
 
 ```bash
 # Clone the repository
-git clone <YOUR_GIT_URL>
+git clone <https://nextup-hub-mc.vercel.app/>
 
 # Navigate to project directory
 cd nextup-hub-creations
