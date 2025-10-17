@@ -27,12 +27,12 @@ const Index = () => {
     <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Hero Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 ios-transition"
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-background/60" />
+      {/* Dark Overlay with Glassmorphism */}
+      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
 
       {/* Animated gradient overlay */}
       <div 
@@ -54,13 +54,13 @@ const Index = () => {
       <main className="relative z-10 container mx-auto px-4 py-20">
         {/* Hero Section */}
         <header className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent drop-shadow-2xl leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent drop-shadow-2xl leading-tight ios-transition hover:scale-105">
             Minecraft Hub - Official Nextup Studio
           </h1>
-          <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed mb-3">
+          <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed mb-3 ios-transition" style={{ animationDelay: '0.1s' }}>
             Choose Your Minecraft Edition: Bedrock or Java
           </p>
-          <p className="text-base text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base text-muted-foreground max-w-3xl mx-auto ios-transition" style={{ animationDelay: '0.2s' }}>
             Free Minecraft downloads, custom worlds, Bedrock addons, Java mods, and stunning shaders. Your ultimate hub for Minecraft Bedrock Edition and Java Edition gaming.
           </p>
         </header>
@@ -72,19 +72,19 @@ const Index = () => {
             <meta itemProp="name" content="Minecraft Bedrock Edition" />
             <meta itemProp="applicationCategory" content="Game" />
             <meta itemProp="operatingSystem" content="Windows, Android, iOS, Xbox, PlayStation, Nintendo Switch" />
-            <Card className="bg-card/40 backdrop-blur-md border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 h-full">
+            <Card className="glass-effect hover:border-primary/50 ios-transition hover:shadow-2xl hover:shadow-primary/20 h-full rounded-3xl overflow-hidden hover:-translate-y-2">
               <CardHeader className="text-center pb-4 pt-8">
-                <CardTitle className="text-3xl md:text-4xl font-bold text-primary mb-3 transition-all duration-300 group-hover:scale-105" itemProp="name">
+                <CardTitle className="text-3xl md:text-4xl font-bold text-primary mb-3 spring-bounce group-hover:scale-105" itemProp="name">
                   Minecraft Bedrock Edition
                 </CardTitle>
-                <CardDescription className="text-base md:text-lg text-foreground/70 leading-relaxed px-4" itemProp="description">
+                <CardDescription className="text-base md:text-lg text-foreground/70 leading-relaxed px-4 ios-transition" itemProp="description">
                   Play cross-platform Minecraft Bedrock Edition with friends on Android, iOS, Windows, Xbox, PlayStation, and Nintendo Switch. Free download, worlds, and addons.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex justify-center pt-2 pb-8">
                 <Button 
                   onClick={handleBedrockClick}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-6 text-lg rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 active:scale-95"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-6 text-lg rounded-full spring-bounce hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 active:scale-95"
                   aria-label="Download and play Minecraft Bedrock Edition - Cross-platform gaming"
                   title="Access Minecraft Bedrock Edition worlds, addons, and downloads"
                 >
@@ -99,19 +99,19 @@ const Index = () => {
             <meta itemProp="name" content="Minecraft Java Edition" />
             <meta itemProp="applicationCategory" content="Game" />
             <meta itemProp="operatingSystem" content="Windows, macOS, Linux" />
-            <Card className="bg-card/40 backdrop-blur-md border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 h-full">
+            <Card className="glass-effect hover:border-primary/50 ios-transition hover:shadow-2xl hover:shadow-primary/20 h-full rounded-3xl overflow-hidden hover:-translate-y-2">
               <CardHeader className="text-center pb-4 pt-8">
-                <CardTitle className="text-3xl md:text-4xl font-bold text-primary mb-3 transition-all duration-300 group-hover:scale-105" itemProp="name">
+                <CardTitle className="text-3xl md:text-4xl font-bold text-primary mb-3 spring-bounce group-hover:scale-105" itemProp="name">
                   Minecraft Java Edition
                 </CardTitle>
-                <CardDescription className="text-base md:text-lg text-foreground/70 leading-relaxed px-4" itemProp="description">
+                <CardDescription className="text-base md:text-lg text-foreground/70 leading-relaxed px-4 ios-transition" itemProp="description">
                   Experience classic Minecraft Java Edition for PC with unlimited mods, custom servers, and community content. Free resources and downloads for Windows, Mac, and Linux.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex justify-center pt-2 pb-8">
                 <Button 
                   onClick={handleJavaClick}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-6 text-lg rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 active:scale-95"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-6 text-lg rounded-full spring-bounce hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 active:scale-95"
                   aria-label="Download and play Minecraft Java Edition - PC gaming with mods"
                   title="Access Minecraft Java Edition mods, servers, and custom content"
                 >
