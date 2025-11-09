@@ -8,68 +8,56 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 200 20% 10%;
-    --foreground: 180 100% 90%;
-
-    --card: 200 25% 12%;
-    --card-foreground: 180 100% 90%;
-
-    --popover: 200 25% 12%;
-    --popover-foreground: 180 100% 90%;
-
-    --primary: 174 72% 56%;
-    --primary-foreground: 200 20% 10%;
-
-    --secondary: 200 20% 15%;
-    --secondary-foreground: 180 100% 90%;
-
-    --muted: 200 20% 15%;
-    --muted-foreground: 180 20% 60%;
-
-    --accent: 174 72% 56%;
-    --accent-foreground: 200 20% 10%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 200 20% 20%;
-    --input: 200 20% 20%;
-    --ring: 174 72% 56%;
-
-    --radius: 0.75rem;
-
-    --orb-color: 174 72% 56%;
-    --glow: 174 72% 56%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 76% 45%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 280 100% 65%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 142 76% 45%;
+    --neon-green: 142 76% 45%;
+    --neon-cyan: 195 100% 50%;
+    --neon-purple: 280 100% 65%;
+    --neon-pink: 330 100% 60%;
+    --radius: 0.25rem;
   }
 
   .dark {
-    --background: 200 20% 10%;
-    --foreground: 180 100% 90%;
-
-    --card: 200 25% 12%;
-    --card-foreground: 180 100% 90%;
-
-    --popover: 200 25% 12%;
-    --popover-foreground: 180 100% 90%;
-
-    --primary: 174 72% 56%;
-    --primary-foreground: 200 20% 10%;
-
-    --secondary: 200 20% 15%;
-    --secondary-foreground: 180 100% 90%;
-
-    --muted: 200 20% 15%;
-    --muted-foreground: 180 20% 60%;
-
-    --accent: 174 72% 56%;
-    --accent-foreground: 200 20% 10%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 200 20% 20%;
-    --input: 200 20% 20%;
-    --ring: 174 72% 56%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 76% 45%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 280 100% 65%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 142 76% 45%;
+    --neon-green: 142 76% 45%;
+    --neon-cyan: 195 100% 50%;
+    --neon-purple: 280 100% 65%;
+    --neon-pink: 330 100% 60%;
   }
 }
 
@@ -83,78 +71,193 @@ All colors MUST be HSL.
   }
 }
 
-@keyframes float {
+@keyframes glitch {
   0%, 100% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(20px, -20px);
-  }
-  50% {
-    transform: translate(-15px, 15px);
-  }
-  75% {
-    transform: translate(15px, 10px);
-  }
-}
-
-@keyframes glow-pulse {
-  0%, 100% {
-    opacity: 0.3;
-    box-shadow: 0 0 40px hsl(var(--glow) / 0.4);
-  }
-  50% {
-    opacity: 0.6;
-    box-shadow: 0 0 80px hsl(var(--glow) / 0.6);
-  }
-}
-
-@keyframes slide-up-fade {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
+    transform: translate(0);
     opacity: 1;
-    transform: translateY(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
   }
 }
 
-@keyframes bounce-subtle {
+@keyframes neon-glow {
   0%, 100% {
-    transform: translateY(0);
+    text-shadow: 0 0 10px hsl(var(--neon-green)), 0 0 20px hsl(var(--neon-green)), 0 0 30px hsl(var(--neon-green));
   }
   50% {
-    transform: translateY(-10px);
+    text-shadow: 0 0 20px hsl(var(--neon-green)), 0 0 40px hsl(var(--neon-green)), 0 0 60px hsl(var(--neon-green));
   }
 }
 
-@keyframes shimmer {
+@keyframes scan-line {
   0% {
-    background-position: -1000px 0;
+    transform: translateY(-100%);
   }
   100% {
-    background-position: 1000px 0;
+    transform: translateY(100vh);
   }
 }
 
-.floating-orb {
-  animation: float 8s ease-in-out infinite, glow-pulse 4s ease-in-out infinite;
+@keyframes grid-pulse {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
 }
 
-.glass-effect {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18),
-              inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+@keyframes float-particle {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+    opacity: 0;
+  }
 }
 
-.ios-transition {
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+@keyframes electric-spark {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(var(--neon-green)), 0 0 10px hsl(var(--neon-green));
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(var(--neon-green)), 0 0 40px hsl(var(--neon-green)), 0 0 60px hsl(var(--neon-green));
+  }
 }
 
-.spring-bounce {
-  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+@keyframes border-flow {
+  0% {
+    border-color: hsl(var(--neon-green));
+  }
+  33% {
+    border-color: hsl(var(--neon-cyan));
+  }
+  66% {
+    border-color: hsl(var(--neon-purple));
+  }
+  100% {
+    border-color: hsl(var(--neon-green));
+  }
+}
+
+@layer utilities {
+  .glitch-text {
+    animation: glitch 0.3s ease-in-out infinite;
+  }
+
+  .neon-text {
+    animation: neon-glow 2s ease-in-out infinite;
+  }
+
+  .scan-line-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scan-line-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--neon-cyan)), transparent);
+    animation: scan-line 8s linear infinite;
+    opacity: 0.5;
+  }
+
+  .grid-background {
+    background-image: 
+      linear-gradient(hsl(var(--neon-green) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--neon-green) / 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-pulse 4s ease-in-out infinite;
+  }
+
+  .gaming-card {
+    background: linear-gradient(135deg, hsl(var(--card) / 0.8), hsl(var(--card) / 0.6));
+    border: 2px solid hsl(var(--neon-green) / 0.3);
+    box-shadow: 
+      0 0 20px hsl(var(--neon-green) / 0.2),
+      inset 0 0 20px hsl(var(--neon-green) / 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gaming-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+      hsl(var(--neon-green)), 
+      hsl(var(--neon-cyan)), 
+      hsl(var(--neon-purple)),
+      hsl(var(--neon-green)));
+    background-size: 400%;
+    opacity: 0;
+    z-index: -1;
+    border-radius: inherit;
+    transition: opacity 0.3s ease;
+  }
+
+  .gaming-card:hover::before {
+    opacity: 0.5;
+    animation: border-flow 3s linear infinite;
+  }
+
+  .electric-button {
+    animation: electric-spark 2s ease-in-out infinite;
+  }
+
+  .particle {
+    animation: float-particle 15s linear infinite;
+  }
+
+  .corner-bracket {
+    position: relative;
+  }
+
+  .corner-bracket::before,
+  .corner-bracket::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid hsl(var(--neon-green));
+  }
+
+  .corner-bracket::before {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .corner-bracket::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+  }
 }
