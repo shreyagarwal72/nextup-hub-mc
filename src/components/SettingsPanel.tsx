@@ -1,4 +1,4 @@
-import { Settings, Sparkles } from "lucide-react";
+import { Settings, Sparkles, Zap, Grid3X3 } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -6,9 +6,16 @@ import { useState } from "react";
 interface SettingsPanelProps {
   matrixEnabled: boolean;
   onMatrixToggle: (enabled: boolean) => void;
+  particlesEnabled: boolean;
+  onParticlesToggle: (enabled: boolean) => void;
 }
 
-const SettingsPanel = ({ matrixEnabled, onMatrixToggle }: SettingsPanelProps) => {
+const SettingsPanel = ({ 
+  matrixEnabled, 
+  onMatrixToggle,
+  particlesEnabled,
+  onParticlesToggle 
+}: SettingsPanelProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -17,31 +24,46 @@ const SettingsPanel = ({ matrixEnabled, onMatrixToggle }: SettingsPanelProps) =>
         variant="ghost"
         size="icon"
         onClick={() => setIsOpen(!isOpen)}
-        className="glass-button rounded-full w-12 h-12 backdrop-blur-xl transition-all duration-500 hover:scale-110"
+        className="glass-button rounded-full w-12 h-12 backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:rotate-90"
         aria-label="Settings"
       >
         <Settings className={`h-5 w-5 transition-transform duration-500 ${isOpen ? 'rotate-180' : ''}`} />
       </Button>
 
       <div 
-        className={`absolute bottom-16 right-0 glass-card rounded-2xl p-4 min-w-[200px] transition-all duration-500 transform origin-bottom-right ${
+        className={`absolute bottom-16 right-0 glass-card rounded-2xl p-5 min-w-[220px] transition-all duration-500 transform origin-bottom-right ${
           isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-2 pointer-events-none'
         }`}
       >
-        <h3 className="text-sm font-semibold mb-4 text-foreground/80 flex items-center gap-2">
-          <Sparkles className="w-4 h-4" />
-          Effects
+        <h3 className="text-sm font-semibold mb-5 text-foreground/80 flex items-center gap-2">
+          <Sparkles className="w-4 h-4 animate-pulse" />
+          Visual Effects
         </h3>
         
-        <div className="flex items-center justify-between gap-4">
-          <label htmlFor="matrix-toggle" className="text-sm text-foreground/70">
-            Matrix Rain
-          </label>
-          <Switch
-            id="matrix-toggle"
-            checked={matrixEnabled}
-            onCheckedChange={onMatrixToggle}
-          />
+        <div className="space-y-4">
+          <div className="flex items-center justify-between gap-4 group">
+            <label htmlFor="particles-toggle" className="text-sm text-foreground/70 flex items-center gap-2 cursor-pointer">
+              <Zap className="w-4 h-4 text-primary group-hover:animate-bounce" />
+              Particles
+            </label>
+            <Switch
+              id="particles-toggle"
+              checked={particlesEnabled}
+              onCheckedChange={onParticlesToggle}
+            />
+          </div>
+
+          <div className="flex items-center justify-between gap-4 group">
+            <label htmlFor="matrix-toggle" className="text-sm text-foreground/70 flex items-center gap-2 cursor-pointer">
+              <Grid3X3 className="w-4 h-4 text-accent group-hover:animate-spin" />
+              Matrix Rain
+            </label>
+            <Switch
+              id="matrix-toggle"
+              checked={matrixEnabled}
+              onCheckedChange={onMatrixToggle}
+            />
+          </div>
         </div>
       </div>
     </div>
