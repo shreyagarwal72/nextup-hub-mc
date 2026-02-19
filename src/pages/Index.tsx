@@ -4,13 +4,18 @@ import ThemeToggle from "@/components/ThemeToggle";
 import SettingsPanel from "@/components/SettingsPanel";
 import MatrixRain from "@/components/MatrixRain";
 import ParticleField from "@/components/ParticleField";
+import AuroraBorealis from "@/components/AuroraBorealis";
 import EditionCard from "@/components/EditionCard";
+import { useHoverSound } from "@/hooks/useHoverSound";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isDark, setIsDark] = useState(true);
   const [matrixEnabled, setMatrixEnabled] = useState(false);
   const [particlesEnabled, setParticlesEnabled] = useState(true);
+  const [auroraEnabled, setAuroraEnabled] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(true);
+  const { playSound } = useHoverSound(soundEnabled);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 2500);
@@ -22,10 +27,12 @@ const Index = () => {
   }, [isDark]);
 
   const handleBedrockClick = () => {
+    playSound("click");
     window.location.href = "https://minecraft-hub-xi.vercel.app/";
   };
 
   const handleJavaClick = () => {
+    playSound("click");
     window.location.href = "https://minecraft-hub-op.vercel.app/";
   };
 
@@ -35,23 +42,22 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden transition-colors duration-700">
-      {/* Matrix Rain Effect */}
+      {/* Background Effects */}
       <MatrixRain enabled={matrixEnabled} />
-
-      {/* Particle Field */}
       <ParticleField enabled={particlesEnabled} />
+      <AuroraBorealis enabled={auroraEnabled} />
 
       {/* Ambient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 animate-gradient" />
       
-      {/* Floating gradient orbs with enhanced animation */}
+      {/* Floating gradient orbs */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px] animate-float" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-[100px] animate-float-delayed" />
       <div className="absolute top-1/2 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-[80px] animate-float-slow" />
       <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-primary/5 rounded-full blur-[90px] animate-float-reverse" />
 
       {/* Theme Toggle */}
-      <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
+      <ThemeToggle isDark={isDark} onToggle={() => { setIsDark(!isDark); playSound("toggle"); }} />
 
       {/* Settings Panel */}
       <SettingsPanel 
@@ -59,6 +65,11 @@ const Index = () => {
         onMatrixToggle={setMatrixEnabled}
         particlesEnabled={particlesEnabled}
         onParticlesToggle={setParticlesEnabled}
+        auroraEnabled={auroraEnabled}
+        onAuroraToggle={setAuroraEnabled}
+        soundEnabled={soundEnabled}
+        onSoundToggle={setSoundEnabled}
+        playSound={playSound}
       />
 
       {/* Main Content */}
@@ -96,6 +107,7 @@ const Index = () => {
               version="v1.21.x"
               variant="primary"
               onClick={handleBedrockClick}
+              onHover={() => playSound("hover")}
             />
           </div>
           <div className="animation-delay-500">
@@ -105,6 +117,7 @@ const Index = () => {
               version="v1.21.x"
               variant="accent"
               onClick={handleJavaClick}
+              onHover={() => playSound("hover")}
             />
           </div>
         </section>
