@@ -7,13 +7,14 @@ interface EditionCardProps {
   version: string;
   variant: "primary" | "accent";
   onClick: () => void;
+  onHover?: () => void;
 }
 
-const EditionCard = ({ title, description, version, variant, onClick }: EditionCardProps) => {
+const EditionCard = ({ title, description, version, variant, onClick, onHover }: EditionCardProps) => {
   const isPrimary = variant === "primary";
   
   return (
-    <article className="group glass-card rounded-3xl p-1 transition-all duration-700 hover:scale-[1.03] hover:shadow-2xl animate-fade-in-up">
+    <article onMouseEnter={onHover} className="group glass-card rounded-3xl p-1 transition-all duration-700 hover:scale-[1.03] hover:shadow-2xl animate-fade-in-up">
       <div className="bg-card/30 backdrop-blur-xl rounded-[22px] p-6 md:p-8 h-full flex flex-col items-center text-center relative overflow-hidden">
         {/* Animated gradient overlay */}
         <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br ${

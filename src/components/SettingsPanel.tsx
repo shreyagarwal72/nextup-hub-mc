@@ -1,4 +1,4 @@
-import { Settings, Sparkles, Zap, Grid3X3 } from "lucide-react";
+import { Settings, Sparkles, Zap, Grid3X3, Waves, Volume2 } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -8,22 +8,38 @@ interface SettingsPanelProps {
   onMatrixToggle: (enabled: boolean) => void;
   particlesEnabled: boolean;
   onParticlesToggle: (enabled: boolean) => void;
+  auroraEnabled: boolean;
+  onAuroraToggle: (enabled: boolean) => void;
+  soundEnabled: boolean;
+  onSoundToggle: (enabled: boolean) => void;
+  playSound: (type?: "hover" | "click" | "toggle") => void;
 }
 
 const SettingsPanel = ({ 
   matrixEnabled, 
   onMatrixToggle,
   particlesEnabled,
-  onParticlesToggle 
+  onParticlesToggle,
+  auroraEnabled,
+  onAuroraToggle,
+  soundEnabled,
+  onSoundToggle,
+  playSound,
 }: SettingsPanelProps) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = (setter: (v: boolean) => void, value: boolean) => {
+    setter(value);
+    playSound("toggle");
+  };
 
   return (
     <div className="fixed bottom-4 right-4 z-50">
       <Button
         variant="ghost"
         size="icon"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => { setIsOpen(!isOpen); playSound("click"); }}
+        onMouseEnter={() => playSound("hover")}
         className="glass-button rounded-full w-12 h-12 backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:rotate-90"
         aria-label="Settings"
       >
@@ -46,11 +62,7 @@ const SettingsPanel = ({
               <Zap className="w-4 h-4 text-primary group-hover:animate-bounce" />
               Particles
             </label>
-            <Switch
-              id="particles-toggle"
-              checked={particlesEnabled}
-              onCheckedChange={onParticlesToggle}
-            />
+            <Switch id="particles-toggle" checked={particlesEnabled} onCheckedChange={(v) => handleToggle(onParticlesToggle, v)} />
           </div>
 
           <div className="flex items-center justify-between gap-4 group">
@@ -58,11 +70,25 @@ const SettingsPanel = ({
               <Grid3X3 className="w-4 h-4 text-accent group-hover:animate-spin" />
               Matrix Rain
             </label>
-            <Switch
-              id="matrix-toggle"
-              checked={matrixEnabled}
-              onCheckedChange={onMatrixToggle}
-            />
+            <Switch id="matrix-toggle" checked={matrixEnabled} onCheckedChange={(v) => handleToggle(onMatrixToggle, v)} />
+          </div>
+
+          <div className="flex items-center justify-between gap-4 group">
+            <label htmlFor="aurora-toggle" className="text-sm text-foreground/70 flex items-center gap-2 cursor-pointer">
+              <Waves className="w-4 h-4 text-primary group-hover:animate-pulse" />
+              Aurora
+            </label>
+            <Switch id="aurora-toggle" checked={auroraEnabled} onCheckedChange={(v) => handleToggle(onAuroraToggle, v)} />
+          </div>
+
+          <div className="h-px bg-foreground/10 my-1" />
+
+          <div className="flex items-center justify-between gap-4 group">
+            <label htmlFor="sound-toggle" className="text-sm text-foreground/70 flex items-center gap-2 cursor-pointer">
+              <Volume2 className="w-4 h-4 text-foreground/60 group-hover:animate-bounce" />
+              Sounds
+            </label>
+            <Switch id="sound-toggle" checked={soundEnabled} onCheckedChange={onSoundToggle} />
           </div>
         </div>
       </div>
