@@ -73,7 +73,7 @@ const Index = () => {
             </h1>
           </div>
           <p className="text-lg md:text-xl text-foreground/60 font-medium mb-3 animate-fade-in-up animation-delay-200">
-            Official NextUp Studio
+            Official Nextup Studio
           </p>
           <p className="text-base md:text-lg text-foreground/50 max-w-xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
             Choose Your Edition · Free Downloads · Custom Worlds · Mods & Shaders
@@ -132,7 +132,7 @@ const Index = () => {
         {/* Footer */}
         <footer className="text-center text-foreground/40 text-sm animate-fade-in animation-delay-800" role="contentinfo">
           <div className="h-px w-48 bg-gradient-to-r from-transparent via-foreground/20 to-transparent mx-auto mb-6 animate-expand-width" />
-          <p className="mb-2 hover:text-foreground/60 transition-colors">© 2025 NextUp Studio · All Rights Reserved</p>
+          <p className="mb-2 hover:text-foreground/60 transition-colors">© 2025 Nextup Studio · All Rights Reserved</p>
           <p className="text-xs text-foreground/30">
             Minecraft Hub - Your source for Minecraft content
           </p>
