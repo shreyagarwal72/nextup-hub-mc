@@ -216,7 +216,7 @@ const MinecraftBlock = () => {
           antialias: true,
           alpha: true,
           powerPreference: "high-performance",
-          pixelRatio: undefined,
+          
         }}
         style={{ background: "transparent" }}
         dpr={[2, 4]}
