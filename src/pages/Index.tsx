@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
 import ThemeToggle from "@/components/ThemeToggle";
 import SettingsPanel from "@/components/SettingsPanel";
@@ -7,6 +7,8 @@ import ParticleField from "@/components/ParticleField";
 import AuroraBorealis from "@/components/AuroraBorealis";
 import EditionCard from "@/components/EditionCard";
 import { useHoverSound } from "@/hooks/useHoverSound";
+
+const MinecraftBlock = lazy(() => import("@/components/MinecraftBlock"));
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -73,28 +75,33 @@ const Index = () => {
       />
 
       {/* Main Content */}
-      <main className="relative z-10 container mx-auto px-4 py-16 md:py-24">
-        {/* Hero Section */}
-        <header className="text-center mb-16 md:mb-20 animate-fade-in">
-          <div className="inline-block mb-6">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight animate-title-reveal">
+      <main className="relative z-10 container mx-auto px-4 py-12 md:py-20">
+        {/* Hero Section with 3D Block */}
+        <header className="text-center mb-12 md:mb-16 animate-fade-in">
+          {/* 3D Minecraft Block */}
+          <Suspense fallback={<div className="h-[220px] md:h-[280px]" />}>
+            <MinecraftBlock />
+          </Suspense>
+
+          <div className="inline-block mb-4 -mt-2">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground tracking-tighter animate-title-reveal">
               <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent animate-gradient-x bg-[length:200%_200%]">
                 Minecraft Hub
               </span>
             </h1>
           </div>
-          <p className="text-lg md:text-xl text-foreground/60 font-medium mb-3 animate-fade-in-up animation-delay-200">
+          <p className="text-lg md:text-xl text-foreground/60 font-semibold mb-2 animate-fade-in-up animation-delay-200 tracking-wide uppercase">
             Official Nextup Studio
           </p>
-          <p className="text-base md:text-lg text-foreground/50 max-w-xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
+          <p className="text-sm md:text-base text-foreground/40 max-w-lg mx-auto leading-relaxed animate-fade-in-up animation-delay-400 font-medium">
             Choose Your Edition · Free Downloads · Custom Worlds · Mods & Shaders
           </p>
           
           {/* Animated underline */}
-          <div className="mt-6 flex justify-center gap-2 animate-fade-in-up animation-delay-600">
-            <div className="h-1 w-12 bg-primary/50 rounded-full animate-pulse-width" />
-            <div className="h-1 w-8 bg-accent/50 rounded-full animate-pulse-width animation-delay-200" />
-            <div className="h-1 w-4 bg-secondary/50 rounded-full animate-pulse-width animation-delay-400" />
+          <div className="mt-5 flex justify-center gap-2 animate-fade-in-up animation-delay-600">
+            <div className="h-1 w-12 bg-primary/60 rounded-full animate-pulse-width" />
+            <div className="h-1 w-8 bg-accent/60 rounded-full animate-pulse-width animation-delay-200" />
+            <div className="h-1 w-4 bg-secondary/60 rounded-full animate-pulse-width animation-delay-400" />
           </div>
         </header>
 
